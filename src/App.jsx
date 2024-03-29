@@ -9,9 +9,15 @@ function App() {
     <div>
       <BrowserRouter>
         <Header />
-        <Home />
         <Routes>
-          <Route path="/" element={<Layout />} />
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <Home />
+              </Layout>
+            }
+          />
           <Route
             path="/game"
             element={<h1 className="text-white">this is the loans page</h1>}

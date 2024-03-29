@@ -5,27 +5,31 @@ import Layout from "./layouts/Layout";
 import Home from "./components/Home";
 
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Layout>
-                <Home />
-              </Layout>
-            }
-          />
-          <Route
-            path="/game"
-            element={<h1 className="text-white">this is the loans page</h1>}
-          />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+	return (
+		<WagmiConfig>
+			<BrowserRouter>
+				<Header />
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<Layout>
+								<Home />
+							</Layout>
+						}
+					/>
+					<Route
+						path="/game"
+						element={
+							<h1 className="text-white">
+								this is the loans page
+							</h1>
+						}
+					/>
+				</Routes>
+			</BrowserRouter>
+		</WagmiConfig>
+	);
 }
 
 export default App;

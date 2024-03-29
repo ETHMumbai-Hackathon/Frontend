@@ -1,8 +1,19 @@
-import { createWeb3Modal } from "@web3modal/wagmi";
-import { defaultWagmiConfig } from "@web3modal/wagmi/dist/types/src/utils/defaultWagmiReactConfig";
-import { defineChain } from "viem";
-import { coreDao } from "viem/chains";
+import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
+import { coreDao } from "wagmi/chains";
 import { WagmiProvider } from "wagmi";
+import { defineChain } from "viem";
+
+// const projectId = process.env.NEXT_PUBLIC_PROJECT_ID as string;
+const projectId = "48824fc8b1f1fa099b74943d7bf0f0ca";
+// const isTestnet = process.env.NEXT_PUBLIC_IS_TESTNET === "true";
+const isTestnet = "true";
+
+const metadata = {
+	description: "Web3Modal Example",
+	icons: ["https://avatars.githubusercontent.com/u/37784886"],
+	name: "Web3Modal",
+	url: "https://web3modal.com",
+};
 
 const coreDaoTestnet = defineChain({
 	blockExplorers: {
@@ -25,7 +36,7 @@ const coreDaoTestnet = defineChain({
 	network: "coreDao testnet",
 	rpcUrls: {
 		default: {
-			http: ["http://rpc.test.btc.network"],
+			http: ["https://rpc.test.btcs.network"],
 		},
 		public: {
 			http: ["https://rpc.test.btcs.network"],
@@ -34,27 +45,19 @@ const coreDaoTestnet = defineChain({
 	testnet: true,
 });
 
-const projectId = "48824fc8b1f1fa099b74943d7bf0f0ca";
-const isTestnet = "true";
-const metadata = {
-	name: "Core11 fantasy league",
-	description: "Fantasy league on CORE",
-};
-
-const chains = [coreDaoTestnet, coreDao];
+const chains = [isTestnet ? coreDaoTestnet : coreDao];
 const wagmiConfig = defaultWagmiConfig({
 	chains,
-	projectId,
 	metadata,
+	projectId,
 });
 
 createWeb3Modal({
-	wagmiConfig,
-	projectId,
 	chains,
+	projectId,
+	wagmiConfig,
 });
 
-// eslint-disable-next-line react/prop-types
-export function WagmiConfig({ children }) {
+export function Wagmiconfig({ children }) {
 	return <WagmiProvider config={wagmiConfig}>{children}</WagmiProvider>;
 }

@@ -1,12 +1,12 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Layout from "./layouts/Layout";
 import Home from "./components/Home";
+import { Wagmiconfig } from "./components/wagmi-config";
 
 function App() {
 	return (
-		<WagmiConfig>
+		<Wagmiconfig>
 			<BrowserRouter>
 				<Header />
 				<Routes>
@@ -28,7 +28,7 @@ function App() {
 					/>
 				</Routes>
 			</BrowserRouter>
-		</WagmiConfig>
+		</Wagmiconfig>
 	);
 }
 

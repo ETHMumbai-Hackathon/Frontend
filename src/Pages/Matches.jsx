@@ -69,7 +69,7 @@ const Matches = () => {
 									Vs
 								</h2>
 								<h4 className="font-light">
-									Starts at Sun 06:30 PM
+									Starts at 06:30 PM
 								</h4>
 							</center>
 

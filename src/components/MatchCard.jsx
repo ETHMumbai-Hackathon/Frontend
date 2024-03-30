@@ -53,7 +53,7 @@ const MatchCard = ({ match }) => {
 				</div>
 			</div>
 			<Link
-				to={`/players/${team1}/${team2}`}
+				to={`/createTeam/${match.matchInfo.matchId}`}
 				className="bg-red-500 text-white py-4 px-2 mt-4"
 			>
 				<button>Play Now</button>

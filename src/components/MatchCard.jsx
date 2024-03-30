@@ -7,22 +7,17 @@ const MatchCard = ({ match }) => {
 	const team2 = match?.matchInfo.team2?.teamName;
 	const venue = match?.matchInfo.venueInfo.ground;
 	const city = match?.matchInfo.venueInfo.city;
-	const time = match?.matchInfo.startDate;
+	const time = match?.matchInfo.status;
 
-	console.log(date);
-	console.log(team1);
-	console.log(team2);
+	console.log(match);
 	return (
 		<div className="flex flex-col items-center mx-10">
-			<Link
-				to={`/players/${team1}/${team2}`}
-				className="flex w-1/2 flex-col gap-10 cursor-pointer"
-			>
+			<div className="flex w-2/3 flex-col gap-6 cursor-pointer">
 				<div className="flex flex-col items-center bg-white w-full mx-5 h-80 rounded-xl shadow-md">
 					<div className="flex flex-col items-start justify-center w-full h-12 bg-green-500 rounded-t-lg">
-						<h1 className="text-white text-lg mx-5 font-bold">
+						{/* <h1 className="text-white text-lg mx-5 font-bold">
 							{date}
-						</h1>
+						</h1> */}
 					</div>
 					<div className="flex flex-col items-center py-5 w-full h-full bg-gray-200">
 						<div className="flex gap-5 justify-center  items-center mt-5 text-2xl">
@@ -56,6 +51,12 @@ const MatchCard = ({ match }) => {
 						</div>
 					</div>
 				</div>
+			</div>
+			<Link
+				to={`/players/${team1}/${team2}`}
+				className="bg-red-500 text-white py-4 px-2 mt-4"
+			>
+				<button>Play Now</button>
 			</Link>
 		</div>
 	);

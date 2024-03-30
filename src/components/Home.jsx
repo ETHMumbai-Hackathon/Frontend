@@ -3,8 +3,10 @@ import HomePng from "../assets/homepng.jpg";
 import { Link } from "react-router-dom";
 function Home() {
   return (
-    <div className="flex items-center h-screen mb-10">
-      <div className="flex flex-col gap-3">
+    <div className="flex items-center py-10 w-full">
+      <div className="bg-green-400 w-36 h-36 absolute -top-24 left-36 -z-10 rounded-full blur-3xl"></div>
+      <div className="bg-green-400 w-24 h-24 absolute bottom-44 left-28 -z-10 rounded-full blur-3xl"></div>
+      <div className="flex flex-col gap-5 w-full h-full">
         <h1 className="text-lg lg:text-3xl text-green-500 font-bold">
           Welcome to the Core 11
         </h1>
@@ -20,7 +22,7 @@ function Home() {
         </Link>
       </div>
       <div>
-        <img src={HomePng} className="w-[600px]" />
+        <img src={HomePng} className="w-full ml-12 mt-72" />
       </div>
     </div>
   );

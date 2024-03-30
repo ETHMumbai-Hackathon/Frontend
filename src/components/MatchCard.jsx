@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 const MatchCard = ({ match }) => {
-  console.log(match);
   const { team1, team2, date, time, venue } = match;
   return (
     <div className="flex flex-col items-center mx-10">
       <Link
-        to={`/match/${team1}vs${team2}`}
-        className="flex w-1/2 flex-col gap-10"
+        to={`/players/${team1}/${team2}`}
+        className="flex w-1/2 flex-col gap-10 cursor-pointer"
       >
         <div className="flex flex-col items-center bg-white w-full mx-5 h-80 rounded-xl shadow-md">
           <div className="flex flex-col items-start justify-center w-full h-12 bg-green-500 rounded-t-lg">

@@ -4,6 +4,7 @@ import Layout from "./layouts/Layout";
 import Home from "./components/Home";
 import { Wagmiconfig } from "./components/wagmi-config";
 import Schedule from "./Pages/Schedule";
+import PlayerCard from "./components/PlayerCard";
 
 function App() {
   return (
@@ -24,6 +25,14 @@ function App() {
             element={
               <Layout>
                 <Schedule />
+              </Layout>
+            }
+          />
+          <Route
+            path="/players/:team1/:team2"
+            element={
+              <Layout>
+                <PlayerCard />
               </Layout>
             }
           />

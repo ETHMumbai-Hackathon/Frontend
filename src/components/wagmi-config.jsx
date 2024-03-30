@@ -1,18 +1,16 @@
 import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
 import { coreDao } from "wagmi/chains";
-import { WagmiProvider } from "wagmi";
+// import { WagmiProvider } from "wagmi";
+import { WagmiConfig } from "wagmi";
 import { defineChain } from "viem";
-
-// const projectId = process.env.NEXT_PUBLIC_PROJECT_ID as string;
 const projectId = "48824fc8b1f1fa099b74943d7bf0f0ca";
-// const isTestnet = process.env.NEXT_PUBLIC_IS_TESTNET === "true";
 const isTestnet = "true";
 
 const metadata = {
-	description: "Web3Modal Example",
-	icons: ["https://avatars.githubusercontent.com/u/37784886"],
 	name: "Web3Modal",
+	description: "Web3Modal Example",
 	url: "https://web3modal.com",
+	icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
 const coreDaoTestnet = defineChain({
@@ -48,16 +46,17 @@ const coreDaoTestnet = defineChain({
 const chains = [isTestnet ? coreDaoTestnet : coreDao];
 const wagmiConfig = defaultWagmiConfig({
 	chains,
-	metadata,
 	projectId,
+	metadata,
 });
 
 createWeb3Modal({
-	chains,
-	projectId,
 	wagmiConfig,
+	projectId,
+	chains,
 });
 
+// eslint-disable-next-line react/prop-types
 export function Wagmiconfig({ children }) {
-	return <WagmiProvider config={wagmiConfig}>{children}</WagmiProvider>;
+	return <WagmiConfig config={wagmiConfig}>{children}</WagmiConfig>;
 }

@@ -7,6 +7,7 @@ import Schedule from "./Pages/Schedule";
 import PlayerCard from "./components/PlayerCard";
 import Matches from "./Pages/Matches";
 import CreateTeam from "./components/CreateTeam";
+import CreateContest from "./components/CreateContest";
 
 function App() {
 	return (
@@ -60,6 +61,7 @@ function App() {
 						path="/createTeam/:match_id"
 						element={<CreateTeam />}
 					/>
+					<Route path="/createContest" element={<CreateContest />} />
 				</Routes>
 			</BrowserRouter>
 		</Wagmiconfig>

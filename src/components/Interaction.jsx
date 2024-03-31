@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import Web3 from "web3";
-import config from "./contract/cricket.json";
+import config from "../utils/core11.json";
 
 const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
 const { ethereum } = isBrowser();

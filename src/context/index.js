@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 
 import Web3Modal from "web3modal";
-import { ABI, ADDRESS } from "../contract";
+import { ABI, ADDRESS } from "../utils";
 const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {

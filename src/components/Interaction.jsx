@@ -9,7 +9,7 @@ if (ethereum) {
 	isBrowser().web3 = new Web3(isBrowser().web3.currentProvider);
 }
 
-const CONTRACT_ADDRESS = "0x5BB1f22f6eB0Ad9e08FE7A24CeBDf5B6328F3498";
+const CONTRACT_ADDRESS = "0xB0639CD979e05BE9f614D1E8afa1D5dacfE4DBea";
 
 const GetPrice = async () => {
 	console.log("fetching price started");
